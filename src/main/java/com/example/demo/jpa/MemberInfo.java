@@ -2,8 +2,11 @@ package com.example.demo.jpa;
 
 import java.util.Date;
 
+import javax.annotation.Generated;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -16,7 +19,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class MemberInfo {
 
 	
-	@Id
+	 @Id
+	 @Column(name = "id")
+     @GeneratedValue(strategy = GenerationType.AUTO)
+     private Long id;
+	 
+	
 	@JsonProperty("authKey")
 	@Column(name = "auth_key")
 	private String authKey;
@@ -41,6 +49,10 @@ public class MemberInfo {
 	@JsonProperty("sex")
 	@Column(name = "sex")
 	private String sex;
+	
+	public Long getId() {
+		return id;
+	}
 
 	public String getAuthKey() {
 		return authKey;

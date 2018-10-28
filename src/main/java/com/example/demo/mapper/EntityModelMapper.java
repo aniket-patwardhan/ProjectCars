@@ -27,5 +27,11 @@ public class EntityModelMapper {
 		brandsDTO.setTwowheeler(brands.getTwowheeler());
 		return brandsDTO;
 	}
+	
+	public static MemberInfo memberModelToEntity (MemberInfoDTO memberInfoDTO) {
+		MemberInfo memberInfo = new MemberInfo();
+		
+		return memberInfo;
+	}
 
 }
